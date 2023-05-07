@@ -1,11 +1,11 @@
 # webkepzes_vizsgaremek
 
-# [Backend]
+# Backend
 
-# --[Python]
+[Python]
 
 
-# --[Golang]
+[Golang]
 
 -- install Golang 1.20
 
@@ -27,7 +27,7 @@ Username=root
 Password=root
 ```
 
-# [Frontend]
+# Frontend
 
 -- npm install
 
