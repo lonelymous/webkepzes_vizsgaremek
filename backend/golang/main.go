@@ -8,25 +8,35 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/logger"
+
 	"github.com/lonelymous/goco"
 	"github.com/lonelymous/godab"
 )
 
 func main() {
+
+	// Create a new server config
 	serverConfig := &models.ServerConfig{}
 	// Initialize the server config
-	err := goco.InitializeConfig(serverConfig)
+	err := goco.InitializeConfig(serverConfig, ".\\config.ini")
 	if err != nil {
 		panic("Error while loading config" + err.Error())
 	}
 
 	// Connect to the database
-	err = godab.OpenConnection(&serverConfig.DatabaseConfig)
+	err = godab.OpenAndCreate(&serverConfig.DatabaseConfig, "../DATABASE.sql")
 	if err != nil {
 		panic("Error while connecting to the database" + err.Error())
 	}
+
 	// Close the database connection when the program exits
 	defer godab.CloseConnection()
+
+	// Check if database is exists
+	_, err = godab.Exec("USE " + serverConfig.DatabaseConfig.Name)
+	if err != nil {
+		log.Println("Error while connecting to the database" + err.Error())
+	}
 
 	// Create the server
 	app := fiber.New()
