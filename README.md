@@ -4,6 +4,7 @@
 
 [Python]
 
+???
 
 [Golang]
 
@@ -14,7 +15,7 @@
 go mod tidy
 ```
 
-build.bat => 
+-- build.bat => 
 
 ./build/config.ini =>
 ```
@@ -32,3 +33,5 @@ Password=root
 -- npm install
 
 -- npm run dev
+
+-- open http://localhost:5173
