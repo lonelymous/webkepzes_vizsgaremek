@@ -34,7 +34,7 @@ func Products_Id_Controller(ctx *fiber.Ctx) error {
 			return err
 		}
 
-		return Update_Product(product)
+		return Update_Product(product, productId)
 	case "DELETE":
 		return Delete_Product(productId)
 	}
