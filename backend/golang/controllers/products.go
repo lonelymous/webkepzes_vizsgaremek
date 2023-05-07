@@ -36,3 +36,19 @@ func Update_Product(product models.ProductEditor, productId ...int) error {
 
 	return err
 }
+
+func Exists_Product(productId int) bool {
+	var err error
+
+	result, err := godab.Queryx("SELECT * FROM products WHERE id=?", productId)
+	if err != nil {
+		return false
+	}
+
+	return result.Next()
+}
+
+func Delete_Product(productId int) error {
+	_, err := godab.Exec("DELETE FROM products WHERE id=?", productId)
+	return err
+}
