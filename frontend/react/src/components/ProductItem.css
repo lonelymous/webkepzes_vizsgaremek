@@ -1,0 +1,18 @@
+.product-item{
+    margin: 8px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 24px;
+}
+
+.product-button{
+    margin: 8px;
+}
+
+.product-modify-button {
+    background-color: #cfa724;
+}
+
+.product-delete-button {
+    background-color: #f44336;
+}
