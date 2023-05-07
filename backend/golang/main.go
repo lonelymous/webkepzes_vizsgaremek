@@ -30,6 +30,13 @@ func main() {
 	}
 
 	// Close the database connection when the program exits
+	godab.CloseConnection()
+
+	// reconnect to database
+	err = godab.OpenConnection(&serverConfig.DatabaseConfig)
+	if err != nil {
+		panic("Error while connecting to the database" + err.Error())
+	}
 	defer godab.CloseConnection()
 
 	// Check if database is exists
