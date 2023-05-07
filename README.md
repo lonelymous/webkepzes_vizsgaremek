@@ -1,16 +1,18 @@
 # webkepzes_vizsgaremek
 
-[Backend]
+# [Backend]
 
--- [Python]
+# --[Python]
 
 
--- [Golang]
+# --[Golang]
 
-install Golang 1.20
+-- install Golang 1.20
 
 -- use go mod tidy to fetch dependencies
+```
 go mod tidy
+```
 
 build.bat => 
 
@@ -25,8 +27,8 @@ Username=root
 Password=root
 ```
 
-[Frontend]
+# [Frontend]
 
-npm install
+-- npm install
 
-npm run dev
+-- npm run dev
